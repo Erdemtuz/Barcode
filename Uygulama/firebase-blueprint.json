@@ -1,0 +1,39 @@
+{
+  "entities": {
+    "agency": {
+      "title": "Agency",
+      "description": "Tourism agency that buys bulk codes.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "description": "Agency name" },
+        "contact": { "type": "string", "description": "Contact person/email" },
+        "createdAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["name"]
+    },
+    "code": {
+      "title": "Access Code",
+      "description": "A unique code for museum entry.",
+      "type": "object",
+      "properties": {
+        "code": { "type": "string", "description": "Unique 8-12 character code" },
+        "agencyId": { "type": "string", "description": "Reference to agency" },
+        "expirationDate": { "type": "string", "format": "date-time" },
+        "usedAt": { "type": "string", "format": "date-time", "description": "When the code was used" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "status": { "type": "string", "enum": ["active", "used", "expired"] }
+      },
+      "required": ["code", "agencyId", "expirationDate", "status"]
+    }
+  },
+  "firestore": {
+    "/agencies/{agencyId}": {
+      "schema": "agency",
+      "description": "Collection of tourism agencies."
+    },
+    "/codes/{codeId}": {
+      "schema": "code",
+      "description": "Collection of generated access codes."
+    }
+  }
+}

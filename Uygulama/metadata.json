@@ -1,0 +1,7 @@
+{
+  "name": "BarCode Manager",
+  "description": "A professional panel for visit to generate, sell, and validate bulk tourism agency codes.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
