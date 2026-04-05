@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/8b7c44d9-40bf-4b9b-941a-d5000c6369d6/resourceGroups/BarcodeManager/providers/Microsoft.Web/sites/BarcodeManager",
+    "appService.deploySubpath": "Uygulama"
+}
